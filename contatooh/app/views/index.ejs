@@ -5,8 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Contatooh</title>
+    <!-- build:css css/index.min.css -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
+    <!-- endbuild -->
 </head>
 
 <body class="container">
@@ -18,7 +20,8 @@
     </div>
     
     <div ng-view/></div>
-
+    
+    <!-- build:js js/index.minjs -->
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/angular-resource/angular-resource.js"></script>
@@ -26,6 +29,7 @@
     <script src="js/services/ContatoService.js"></script>
     <script src="js/controllers/ContatosController.js"></script>
     <script src="js/controllers/ContatoController.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
