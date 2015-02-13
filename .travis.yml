@@ -10,18 +10,18 @@ env:
     - NODE_ENV: test
 addons:
   sauce_conn ect: true
-before_inst all:
-  - npm install -g bower@1 .3
-  - npm install -g grunt-c li@0.1
-  - npm install -g karma-c li@0.0
-  - npm install -g protrac tor@1.5
-  - webdriver-ma nager update
+before_install:
+  - npm install -g bower@1.3
+  - npm install -g grunt-cli@0.1
+  - npm install -g karma-cli@0.0
+  - npm install -g protractor@1.5
+  - webdriver-manager update
   - bower install
-before_scri pt:
+before_script:
   - node test/data. js
   - grunt
   - cd dist
 script:
-  - karma start config/ karma.config.js --singl e-run --browsers PhantomJS
+  - karma start config/karma.config.js --single-run --browsers PhantomJS
   - node server &
-  - protractor conf ig/protractor.js
+  - protractor config/protractor.js
