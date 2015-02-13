@@ -1,6 +1,6 @@
 language: node_js
 notifications:
-email: ythalorossy@gmail.com
+  email: ythalorossy@gmail.com
 node_js:
   - 0.10
 services:
@@ -9,7 +9,7 @@ env:
   global:
     - NODE_ENV: test
 addons:
-  sauce_conn ect: true
+  sauce_connect: true
 before_install:
   - npm install -g bower@1.3
   - npm install -g grunt-cli@0.1
