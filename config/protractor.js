@@ -1,11 +1,18 @@
+var config = require('./config')();
+
 exports.config = {
+    sauceUser : config.sauceUser,
+    sauceKey : config.sauceKey,
+    capabilities : {
+        'name' : config.sauceTestName,
+        'browserName' : 'chrome',
+        'tunnel-identifier' : config.travisJubNumber,
+        'build' : config.travisBuild
+    },
     
     specs: ['../test/e2e/**/*.js'],
     
     onPrepare: function () {
-
-        var config = require('./config')();
-        
         browser.driver.get('http://localhost:3000');
         browser.driver.findElement(by.xpath(".//*[@id='entrar']/h1")).click();
         browser.driver.findElement(by.id('login_field')).sendKeys(config.seleniumUser);
